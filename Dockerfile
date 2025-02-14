@@ -1,20 +1,23 @@
-# Use an official OpenJDK image
+# Use OpenJDK as base image
 FROM eclipse-temurin:17-jdk
 
 # Set working directory
 WORKDIR /app
 
-# Copy all files to container
+# Copy everything from the project
 COPY . .
 
 # Give execute permission to Maven Wrapper
 RUN chmod +x mvnw
 
-# Build the application
+# Build the WAR file
 RUN ./mvnw clean package
+
+# Find the generated WAR file dynamically
+RUN cp target/*.war app.war
 
 # Expose the default Spring Boot port
 EXPOSE 8080
 
-# Run the application
-CMD ["java", "-jar", "target/*.war"]
+# Start the application
+CMD ["java", "-jar", "app.war"]
