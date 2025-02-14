@@ -1,0 +1,5 @@
+# Created at 2025-02-14T15:53:17.118
+Boot Manifest-JAR contains absolute paths in classpath 'E:\CJC_Ajinkya\Softwares\Adhyayan_B-186\SpringBoot_Day4_Deploy_JSP_PostgreSQL\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
